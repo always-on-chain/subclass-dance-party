@@ -23,7 +23,7 @@ HorizontalDancer.prototype.step = function(timeBetweenSteps) {
   if (this.moved && this.left !== this.offset - 80) {
     this.left -= 5;
   } else {
-    this.moved = false
+    this.moved = false;
   }
   Dancer.prototype.setPosition.call(this, this.top, this.left);
   // console.log('LEFT= ' + this.left + ' | OFFSET= ' + this.offset);
