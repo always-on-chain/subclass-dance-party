@@ -5,7 +5,7 @@ describe('blinkyDancer', function() {
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    blinkyDancer = BlinkyDancer(10, 20, timeBetweenSteps);
+    blinkyDancer = new BlinkyDancer(10, 20, timeBetweenSteps);
     console.log(blinkyDancer);
   });
 
@@ -24,8 +24,10 @@ describe('blinkyDancer', function() {
       sinon.spy(blinkyDancer, 'step');
       expect(blinkyDancer.step.callCount).to.be.equal(0);
       clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
+      // console.log(clock);
       clock.tick(timeBetweenSteps);
-
+      // console.log(clock);
+      // console.log('COUNT: ' + blinkyDancer.step.callCount);
       expect(blinkyDancer.step.callCount).to.be.equal(1);
 
       clock.tick(timeBetweenSteps);

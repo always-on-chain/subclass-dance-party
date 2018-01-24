@@ -2,14 +2,12 @@
 // var makeDancer = function(top, left, timeBetweenSteps) {
 
 var Dancer = function(timeBetweenSteps) {
-  this.$node = $('<span class="dancer"></span>');
+  this.$node = $('<img src="assets/astronaut.jpg" class="dancer">');
   this.timeBetweenSteps = timeBetweenSteps;
-  // console.log(this.$node);
 };
 
 Dancer.prototype.step = function() {
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
-  // console.log('INSIDE DANCER');
 };
 
 Dancer.prototype.setPosition = function(top, left) {

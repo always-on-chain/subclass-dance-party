@@ -10,7 +10,6 @@ VerticalDancer.prototype = Object.create(Dancer.prototype);
 VerticalDancer.prototype.constructor = VerticalDancer;
 
 VerticalDancer.prototype.step = function(timeBetweenSteps) {
-  // debugger;
   Dancer.prototype.step.call(this, timeBetweenSteps);
   // increment left position to a certain point
   // then go back to where we started 
@@ -27,6 +26,10 @@ VerticalDancer.prototype.step = function(timeBetweenSteps) {
     this.moved = false;
   }
   Dancer.prototype.setPosition.call(this, this.top, this.left);
-  // console.log('LEFT= ' + this.left + ' | OFFSET= ' + this.offset);
-  // console.log('called');
+};
+
+VerticalDancer.prototype.align = function(left) {
+  this.left = left;
+  this.top = 160;
+  this.offset = this.top + 80.0;
 };

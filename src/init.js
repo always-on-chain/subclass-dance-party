@@ -24,12 +24,22 @@ $(document).ready(function() {
     var top = $('body').height() * Math.random();
     var left = $('body').width() * Math.random();
     var timeBetweenSteps = Math.random() * 1000;
-    // debugger;
     var dancer = new dancerMakerFunction(top, left, timeBetweenSteps);
+    
+    window.dancers.push(dancer);
     
     dancer.setPosition(top, left);
     dancer.step(timeBetweenSteps);
     $('body').append(dancer.$node);
+  });
+  
+  $('.align-dancers').on('click', function(event) { 
+    var left = 100;
+    for (var i = 0; i < window.dancers.length; i++) {
+      // debugger;
+      window.dancers[i].align(left);
+      left += 50;
+    }
   });
 });
 
